@@ -67,9 +67,9 @@ function Tableau:canAcceptCard(card)
     if color1 == color2 then return false end
 
     local rankOrder = {
-        A = 1, ["02"] = 2, ["03"] = 3, ["04"] = 4, ["05"] = 5, ["06"] = 6,
-        ["07"] = 7, ["08"] = 8, ["09"] = 9, ["10"] = 10, J = 11, Q = 12, K = 13
-    }
+    A = 1, ["2"] = 2, ["3"] = 3, ["4"] = 4, ["5"] = 5, ["6"] = 6,
+    ["7"] = 7, ["8"] = 8, ["9"] = 9, ["10"] = 10, J = 11, Q = 12, K = 13
+}
 
     return rankOrder[card.rank] == rankOrder[top.rank] - 1
 end
@@ -83,9 +83,9 @@ function Tableau:canAcceptToFoundation(card)
     end
 
     local rankOrder = {
-        A = 1, ["02"] = 2, ["03"] = 3, ["04"] = 4, ["05"] = 5, ["06"] = 6,
-        ["07"] = 7, ["08"] = 8, ["09"] = 9, ["10"] = 10, J = 11, Q = 12, K = 13
-    }
+    A = 1, ["2"] = 2, ["3"] = 3, ["4"] = 4, ["5"] = 5, ["6"] = 6,
+    ["7"] = 7, ["8"] = 8, ["9"] = 9, ["10"] = 10, J = 11, Q = 12, K = 13
+}
 
     return card.suit == top.suit and rankOrder[card.rank] == rankOrder[top.rank] + 1
 end
