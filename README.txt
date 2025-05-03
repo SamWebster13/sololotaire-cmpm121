@@ -1,50 +1,45 @@
-Solitaire
-Samuel L. Webster
-CMPM 121 – Game Development
+Solitaire – CMPM 121 Final Project
+By Samuel L. Webster
 
-Overview
-This is a classic implementation of Solitaire built using the LÖVE2D framework. The game incorporates core mechanics such as card dragging, tableau stacking, foundation sorting, stock cycling, and win detection, offering players a familiar and fully functional Solitaire experience.
+**Overview**
+This is a complete implementation of Klondike Solitaire using Lua and LÖVE2D. The project was developed with a focus on clean code structure, responsive card interaction, and accurate game mechanics. The game includes all core systems expected in a functioning Solitaire game, along with extra polish such as animations, snapping, and undo functionality.
 
-Features Added
-Fully functional drag-and-drop card interaction.
+-**Core Features**
+Drag & Drop Card Movement
+Cards can be clicked and dragged between tableau piles, foundations, or returned to the stock. Movements are validated in real-time based on Solitaire rules.
 
-Click-based card flipping and movement from stock to waste.
+-**Valid Placement Checking**
+Card stacking enforces standard Klondike rules: red-on-black or black-on-red, descending in the tableau, ascending in suit in foundations.
 
-Correct stacking logic for tableau and foundations.
+-**Undo Functionality**
+A fully functional Undo system was implemented using a simple Command Pattern approach. Every card move is tracked and reversible with a single click.
 
-Win state detection and celebration.
+-**Timer and Step Counter**
+Real-time display of elapsed playtime and number of moves made.
 
-Timer and step counter to track performance.
+-**Win State Detection**
+The game detects when all cards have been moved to the foundation piles, ending the session cleanly.
 
-Attempted Undo functionality (not fully implemented due to time constraints).
+**Code Structure**
+main.lua: Entry point, handles game loop and input.
 
-Foundation cards now automatically snap to the center of their slots for clean visual alignment.
+Game.lua: Manages overall game state, UI, piles, and rules.
 
-Programming Patterns
-The project utilized several core design patterns:
+Card.lua: Represents individual cards, handles drawing and movement.
 
-Object-Oriented Programming (OOP): Central to the structure, with clear classes such as Card, Deck, Pile, Tableau, and Game to encapsulate behavior and state.
+Deck.lua: Handles shuffling and card generation.
 
-Observer Pattern: Changes in card state (flips, moves, etc.) automatically update the interface, streamlining game logic.
+Tableau.lua: Abstract base class for stock, tableau, and foundation piles.
 
-Command Pattern (attempted): Used for move tracking and intended to support undo functionality by storing previous game states and actions.
+UndoManager.lua: Tracks actions and handles undo logic.
 
-Postmortem
-What Went Well:
-The modular class structure made development organized and easy to expand.
+Design Patterns Used
+Object-Oriented Programming (OOP): Encapsulation through Lua tables and metatables.
 
-Card interaction feels smooth and responsive.
+Command Pattern: Used for tracking reversible actions (Undo).
 
-Game state updates consistently across stock, waste, tableau, and foundation piles.
+Separation of Concerns: Drawing, input, logic, and state are cleanly separated across classes.
 
-Visual presentation is clean, aided by well-aligned card placements and animated feedback.
+Assets
+Card Art & Icons: From Kenney.nl Boardgame Pack
 
-Challenges:
-Undo functionality was partially implemented but not completed due to limited time.
-
-Some visual bugs (like initial card shadowing) required fine-tuning of coordinate math.
-
-Overall, the game is feature-complete for core Solitaire play and has a strong foundation for further polish or additions.
-
-Assets Used
-Card Sprites: Kenney.nl Boardgame Pack
