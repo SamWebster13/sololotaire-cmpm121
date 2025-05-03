@@ -31,8 +31,6 @@ Deck.lua: Handles shuffling and card generation.
 
 Tableau.lua: Abstract base class for stock, tableau, and foundation piles.
 
-UndoManager.lua: Tracks actions and handles undo logic.
-
 Design Patterns Used
 Object-Oriented Programming (OOP): Encapsulation through Lua tables and metatables.
 
