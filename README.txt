@@ -1,15 +1,50 @@
-SAMUEL L WEBSTER
-CMPM 121
-SOLITAIRE
+Solitaire
+Samuel L. Webster
+CMPM 121 – Game Development
 
-PATTERNS:
-Throughout the development of the game, Object-Oriented Programming (OOP) was employed to structure the game into classes like Card, Deck, Tableau, and Game. This approach made the code modular, easier to maintain, and scalable for additional features or changes. The Observer Pattern was utilized to ensure that changes in the game state, such as when cards are moved or shuffled, are automatically reflected throughout the game. Additionally, the Command Pattern was applied to handle actions like moving a card or drawing from the stock, making it easier to track and manage player actions.
+Overview
+This is a classic implementation of Solitaire built using the LÖVE2D framework. The game incorporates core mechanics such as card dragging, tableau stacking, foundation sorting, stock cycling, and win detection, offering players a familiar and fully functional Solitaire experience.
 
-POSTMORTEM:
-Looking back, there were several aspects of the project that went well. The modular design helped in managing the game objects like cards and piles, making the game more organized and easier to understand. The drag-and-drop mechanics for moving cards were intuitive, and they worked responsively, providing a smooth user experience. Game state management was also effective, as the stock, tableau, and foundation piles updated properly in response to player actions.
+Features Added
+Fully functional drag-and-drop card interaction.
 
-We have all the neccissary mechanics, as well as an included timer and step counter, though I had tried to implement an undo button, which failed due to time constraints. 
+Click-based card flipping and movement from stock to waste.
 
-Asset List
-Card Sprites: From Kenney.nl Boardgame Pack
-Background: Stock Grass photo https://woodlandscenics.woodlandscenics.com/show/item/T45
+Correct stacking logic for tableau and foundations.
+
+Win state detection and celebration.
+
+Timer and step counter to track performance.
+
+Attempted Undo functionality (not fully implemented due to time constraints).
+
+Foundation cards now automatically snap to the center of their slots for clean visual alignment.
+
+Programming Patterns
+The project utilized several core design patterns:
+
+Object-Oriented Programming (OOP): Central to the structure, with clear classes such as Card, Deck, Pile, Tableau, and Game to encapsulate behavior and state.
+
+Observer Pattern: Changes in card state (flips, moves, etc.) automatically update the interface, streamlining game logic.
+
+Command Pattern (attempted): Used for move tracking and intended to support undo functionality by storing previous game states and actions.
+
+Postmortem
+What Went Well:
+The modular class structure made development organized and easy to expand.
+
+Card interaction feels smooth and responsive.
+
+Game state updates consistently across stock, waste, tableau, and foundation piles.
+
+Visual presentation is clean, aided by well-aligned card placements and animated feedback.
+
+Challenges:
+Undo functionality was partially implemented but not completed due to limited time.
+
+Some visual bugs (like initial card shadowing) required fine-tuning of coordinate math.
+
+Overall, the game is feature-complete for core Solitaire play and has a strong foundation for further polish or additions.
+
+Assets Used
+Card Sprites: Kenney.nl Boardgame Pack
